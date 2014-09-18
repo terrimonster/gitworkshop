@@ -60,6 +60,7 @@ On your local machine, clone the example mymotd module:
 git clone https://github.com/terrimonster/mymotd.git
 cd mymotd
 rm -rf .git
+```
 
 Now the code is not a git working directory. Let's make that into a repo for your GitLab server. While still inside that mymotd directory:
 
@@ -82,7 +83,7 @@ vagrant ssh gitlab
 sudo su -
 cp -r /vagrant/hooks /var/opt/gitlab/git-data/repositories/puppet/mymotd.git/
 chmod a+x /var/opt/gitlab/git-data/repositories/puppet/mymotd.git/hooks/pre-receive
-
+```
 
 
 
