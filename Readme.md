@@ -84,29 +84,6 @@ cp -r /vagrant/hooks /var/opt/gitlab/git-data/repositories/puppet/mymotd.git/
 chmod a+x /var/opt/gitlab/git-data/repositories/puppet/mymotd.git/hooks/pre-receive
 
 
-## Contributing
-
-Contributions would be very welcome.
-
-Particuarily, the items with a "TODO" marked above.  This includes further
-automating the Gitlab server (create the group, repositories).
-
-A Puppet module for deploying/managing Gitlab that works well on CentOS
-(including el6) would be great.  Something outside installing the RPM.
-
-Further examples of roles and profiles.
-
-Maybe throw a Jenkins box in the mix with some sample tests and code
-deployment/promotion pipeline.
-
-## Known issues
-
-The control repo has a "master" branch, but it shouldn't be used.  The reason
-it's present is because GitLab has HEAD pointint to "master" when a new repo
-is created, and trying to push a masterless-repo there causes clones to fail
-until HEAD gets changed (requiring you to change the default branch via the
-GitLab interface).
-
 ## Other
 
 This makes use of Greg Sarjeant's [data-driven-vagrantfile](https://github.com/gsarjeant/data-driven-vagrantfile)
