@@ -84,6 +84,8 @@ cp -r /vagrant/hooks /var/opt/gitlab/git-data/repositories/puppet/mymotd.git/
 chmod a+x /var/opt/gitlab/git-data/repositories/puppet/mymotd.git/hooks/pre-receive
 
 
+
+
 ## Other
 
 This makes use of Greg Sarjeant's [data-driven-vagrantfile](https://github.com/gsarjeant/data-driven-vagrantfile)
