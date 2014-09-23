@@ -18,6 +18,6 @@ node /^gitlab/ {
 }
 
 node default {
-  #include motd
+  #include mymotd
 }
 

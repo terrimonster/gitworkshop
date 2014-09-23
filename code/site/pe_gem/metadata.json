@@ -1,0 +1,23 @@
+{
+  "author": "Puppet Labs",
+  "types": [
+
+  ],
+  "version": "0.0.1",
+  "license": "Apache License 2.0",
+  "project_page": "https://github.com/puppetlabs/puppetlabs-pe_gem",
+  "source": "https://github.com/puppetlabs/puppetlabs-pe_gem",
+  "checksums": {
+    "LICENSE": "b3f8a01d8699078d82e8c3c992307517",
+    "README.md": "a392fb0abbc1321894a64f26a27ed2ad",
+    "tests/init.pp": "d209050b69b12d9901018a553a74619f",
+    "lib/puppet/provider/package/pe_gem.rb": "872ce6950a28b54b957bdfd4e7eca990",
+    "Modulefile": "9cf20760f63b8e2d1d7c7b73dbc455a7"
+  },
+  "dependencies": [
+
+  ],
+  "name": "puppetlabs-pe_gem",
+  "summary": "Puppet Labs PE Gem Module",
+  "description": "PE Gem module for Puppet Enterprise"
+}

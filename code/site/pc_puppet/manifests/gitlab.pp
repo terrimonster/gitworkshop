@@ -4,6 +4,16 @@ class pc_puppet::gitlab {
     ensure => 'present',
   }
 
+  package { 'puppet-lint':
+    ensure => present,
+    provider => 'pe_gem',
+  }
+
+  file { '/usr/local/bin/puppet-lint':
+    ensure => link,
+    target => '/opt/puppet/bin/puppet-lint',
+  }
+
   ## This rpm is an omnibus installer
   package { 'gitlab':
     ensure   => 'present',

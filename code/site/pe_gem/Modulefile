@@ -1,0 +1,8 @@
+name    'puppetlabs-pe_gem'
+version '0.0.1'
+source  'https://github.com/puppetlabs/puppetlabs-pe_gem'
+author  'Puppet Labs'
+license 'Apache License 2.0'
+summary 'Puppet Labs PE Gem Module'
+description 'PE Gem module for Puppet Enterprise'
+project_page 'https://github.com/puppetlabs/puppetlabs-pe_gem'

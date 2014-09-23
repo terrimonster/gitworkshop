@@ -5,11 +5,18 @@ PE_VERSION="3.3.0"
 ###########################################################
 ANSWERS=$1
 PE_URL="https://s3.amazonaws.com/pe-builds/released/${PE_VERSION}/puppet-enterprise-${PE_VERSION}-el-6-x86_64.tar.gz"
+DLPATH="/vagrant/puppet/pe/install"
 FILENAME=${PE_URL##*/}
 DIRNAME=${FILENAME%*.tar.gz}
 
 ## A reasonable PATH
 echo "export PATH=$PATH:/usr/local/bin:/opt/puppet/bin" >> /etc/bashrc
+
+if [! -d ${DLPATH} ]; then
+  mkdir -p $DLPATH
+else
+  echo "${DLPATH} already present"
+fi
 
 ## Add host entries for each system
 cat > /etc/hosts <<EOH
@@ -21,7 +28,7 @@ cat > /etc/hosts <<EOH
 EOH
 
 ## Download and extract the PE installer
-cd /vagrant/puppet/pe || (echo "/vagrant/puppet/pe doesn't exist." && exit 1)
+cd $DLPATH || (echo "$DLPATH doesn't exist." && exit 1)
 if [ ! -f $FILENAME ]; then
   curl -O ${PE_URL} || (echo "Failed to download ${PE_URL}" && exit 1)
 else
@@ -37,7 +44,7 @@ fi
 ## Install PE with a specified answer file
 if [ ! -d '/opt/puppet/' ]; then
   # Assume puppet isn't installed
-  /vagrant/puppet/pe/${DIRNAME}/puppet-enterprise-installer \
+  ${DLPATH}/${DIRNAME}/puppet-enterprise-installer \
     -a /vagrant/puppet/pe/answers/${ANSWERS}
 else
   echo "/opt/puppet exists. Assuming it's already installed."
@@ -68,15 +75,6 @@ if [ "$1" == 'master.txt' ]; then
 
     /opt/puppet/bin/puppet agent -t
 
-    if [ -f "/root/.ssh/id_rsa.pub" ]; then
-      echo "################################################################"
-      echo "Copy the following SSH pubkey to your clipboard:"
-      echo
-      cat /root/.ssh/id_rsa.pub
-      echo
-      echo "################################################################"
-      echo "This key should be added to GitLab."
-    fi
   else
     echo "The master failed to apply its role."
   fi
