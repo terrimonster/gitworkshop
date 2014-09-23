@@ -55,7 +55,7 @@ You will be prompted immediately to change the root password.
 #### 8.2 Create a new project in Gitlab with the following settings:
 
 
-Project Name: `motd`
+Project Name: `mymotd`
 
 Namespace: `puppet`
 
@@ -193,5 +193,9 @@ puppet agent -t
 ## Other
 
 This makes use of Greg Sarjeant's [data-driven-vagrantfile](https://github.com/gsarjeant/data-driven-vagrantfile)
+
+Learn more about [puppet-lint](http://puppet-lint.com/)
+
+Go do an [interactive git tutorial](http://try.github.com)
 
 No Vagrant plugins are required.
